@@ -1,6 +1,37 @@
 /* ===========================================================
    MIXINS
 =========================================================== */
+/*--- KEYFRAME ANIMATIONS ---*/
+
+@mixin mykeyframes($keyname) {
+  @-webkit-keyframes $keyname {
+    @content;
+  }
+  @-moz-keyframes $keyname {
+    @content;
+  }
+  @-ms-keyframes $keyname {
+    @content;
+  }
+  @keyframes $keyname {
+    @content;
+  }
+}
+@mixin myanim($animname) {
+  -webkit-animation:$animname;
+  -moz-animation:$animname;
+  -o-animation:$animname;
+  animation:$animname;
+}
+
+
+/*--- Animations ---*/
+
+@include mykeyframes(moving-water) {
+  0% {background-position:0 top;}
+  100% {background-position:-776px top;}
+}
+
 @mixin clearfix {
     &:after {
         content: ".";

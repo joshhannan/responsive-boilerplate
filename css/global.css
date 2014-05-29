@@ -1701,8 +1701,38 @@ table {
 /* ===========================================================
    MIXINS
 =========================================================== */
+/*--- KEYFRAME ANIMATIONS ---*/
+/*--- Animations ---*/
+@-webkit-keyframes moving-water {
+  0% {
+    background-position: 0 top; }
+
+  100% {
+    background-position: -776px top; } }
+
+@-moz-keyframes moving-water {
+  0% {
+    background-position: 0 top; }
+
+  100% {
+    background-position: -776px top; } }
+
+@-ms-keyframes moving-water {
+  0% {
+    background-position: 0 top; }
+
+  100% {
+    background-position: -776px top; } }
+
+@keyframes moving-water {
+  0% {
+    background-position: 0 top; }
+
+  100% {
+    background-position: -776px top; } }
+
 /*===========================================================================================
-   LAYOUT
+	LAYOUT
 ===========================================================================================*/
 body {
   background-color: #f9f8f4;
@@ -1747,8 +1777,23 @@ a {
   a:hover, a:active {
     color: black; }
 
+.button {
+  text-align: center;
+  border-radius: 7px;
+  border: 5px solid white;
+  padding: 18px 50px;
+  color: white;
+  background: url("../images/wave.png") repeat-x top center #b1d4e3;
+  text-transform: uppercase; }
+  .button:hover {
+    color: white;
+    -webkit-animation: moving-water 10s linear infinite;
+    -moz-animation: moving-water 10s linear infinite;
+    -o-animation: moving-water 10s linear infinite;
+    animation: moving-water 10s linear infinite; }
+
 /*===========================================================================================
-   BLOCKS - GENERAL RULES
+	BLOCKS - GENERAL RULES
 ===========================================================================================*/
 .block {
   width: 100%;
@@ -2201,16 +2246,16 @@ a {
   float: left; }
 
 /*===========================================================================================
-   HEADER
+	HEADER
 ===========================================================================================*/
 /*===========================================================================================
-   BANNER
+	BANNER
 ===========================================================================================*/
 /*===========================================================================================
-   FOOTER
+	FOOTER
 ===========================================================================================*/
 /*===========================================================================================
-   MEDIA
+	MEDIA
 ===========================================================================================*/
 /* ===========================================================
    TABLET SIZING
