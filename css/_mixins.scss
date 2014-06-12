@@ -1,6 +1,22 @@
 /* ===========================================================
    MIXINS
 =========================================================== */
+
+@mixin bp($point) {
+  $bp-480: "(min-width: 480px)";
+  $bp-768: "(min-width: 768px)";
+  $bp-1000: "(min-width: 1000px)";
+  @if $point == 480 {
+    @media #{$bp-480} { @content; }
+  }
+  @else if $point == 768 {
+    @media #{$bp-768} { @content; }
+  }
+  @else if $point == 1000 {
+    @media #{$bp-1000}  { @content; }
+  }
+}
+
 /*--- KEYFRAME ANIMATIONS ---*/
 
 @mixin mykeyframes($keyname) {
