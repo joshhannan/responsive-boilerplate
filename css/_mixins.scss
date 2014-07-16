@@ -1,6 +1,13 @@
 /* ===========================================================
    MIXINS
 =========================================================== */
+@mixin vendorize($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
 
 @mixin bp($point) {
   $bp-480: "(min-width: 480px)";
