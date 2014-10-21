@@ -1,0 +1,135 @@
+/*===========================================================================================
+	LAYOUT
+===========================================================================================*/
+* { @include box-sizing($box-model: border-box); -webkit-font-smoothing: antialiased; }
+body { font-size: 12px; line-height: 1em; font-family: $text; }
+.container { max-width: 1200px; margin: 0 auto; width: 100%; }
+h1 { font: 2em/2em $heading; }
+h2 { font: 1.8em/1.8em $heading; }
+h3 { font: 1.6em/1.6em $heading; }
+h4 { font: 1.4em/1.4em $heading; }
+h5 { font: 1.2em/1.2em $heading; }
+h6 { font: 1em/1em $heading; font-weight: bold; }
+p { font: 1em/1.25em $text; }
+ul li { font: 1em/1.5em $text; }
+a { color: $link; &:hover, &:active { color: $body_text; } }
+.left { float: left; }
+.right { float: right; }
+.image img { @include resp_image; }
+.button {
+	text-align: center;
+	border-radius: 0;
+	border: 5px solid $white;
+	padding: 14px 25px;
+	color: $white;
+	background-color: $black;
+	background: rgba(0, 0, 0, 0.6);
+	text-transform: uppercase;
+	@include vendorize( transition, all .15s ease-in );
+	&:hover { color: $white; }
+}
+.icon { font-family: $fa; }
+.select_it {
+	width: 36%; float: left; position: relative;
+	.select_it_box {
+		width: 100%; float: left;
+		.displayed { cursor: pointer; text-align: left; display: block; border-radius: 0; background: #a8a8a8; padding: 10px 7%; width: 100%; color: $white; font: 14px/14px $text; text-transform: uppercase; }
+		&.open .tab:after { content: "\f106";  }
+	}
+	.tab {
+		position: absolute; width: 24px; top: 10px; right: 5px; bottom: 10px; color: $white;
+		&:after { content: "\f107"; font: 32px/16px 'FontAwesome'; }
+	}
+	ul { background: #a8a8a8; width: 100%; position: absolute; top: 99%; z-index: 9999; float: left; padding: 10px 0; max-height: 150px; border-left: 1px solid $gray; border-right: 1px solid $gray; border-bottom: 1px solid $gray; box-sizing: border-box; overflow-y: scroll; }
+	li {
+		cursor: pointer; width: 100%; box-sizing: border-box; padding: 5px 7%; float: left; list-style: none outside; display: block; font: 12px/12px $text; color: $white;
+		&:hover, &.selected { color: #FFFFFF; background: $light_black; }
+	}
+}
+/*===========================================================================================
+	MEDIA CLASSES
+===========================================================================================*/
+.mobile { display: block !important; @include bp(480) { display: none !important; } }
+.tablet { display: none !important; @include bp(480) { display: block !important; } @include bp(768) { display: none !important; } }
+.desktop { display: none !important; @include bp(768) { display: block !important; } }
+/*===========================================================================================
+	CONTACT FORM
+===========================================================================================*/
+.contact_form {
+	width: 100%;
+	float: left;
+	label {
+		position: absolute;
+		font: 14px/14px $text;
+		text-transform: uppercase;
+		color: $light_black;
+		top: 14px;
+		left: 30px;
+		height: 0;
+		@include vendorize(transition, all .15s ease-in);
+		&.show {
+			top: -22px;
+			left: 0;
+			height: auto;
+			background: $black;
+			color: $white;
+			padding: 5px 20px;
+			border-radius: 4px 4px 0 0;
+			font: 12px/12px $text;
+		}
+	}
+	.block {
+		position: relative;
+		margin: 0 0 25px;
+		input[type=text], input[type=email], input[type=number], input[type=tel], select, textarea {
+			width: 100%;
+			resize: none;
+			border: 0;
+			background: #f6f9f8;
+			padding: 10px 30px;
+			vertical-align: middle;
+			margin: 0;
+			font: normal 11px/20px $text;
+			box-shadow: 0px 0px 5px $shadow;
+			&:focus { outline: none; box-shadow: 0px 0px 5px $light_black; }
+		}
+		textarea { resize: none; }
+		&.omit label { position: relative; top: auto; left: auto; height: auto; }
+	}
+	.thirds { width: 100%; float: left; }
+	.thirds .block { width: 31%; margin: 0 1%; }
+}
+/*===========================================================================================
+	BLOCKS - GENERAL RULES
+===========================================================================================*/
+.block {
+	width: 100%;
+	float: left;
+	&.inline_block {
+		text-align: center;
+		.fifth, .quarter, .third, .two_fifths, .half, .three_fifths, .two_thirds, .three_quarters, .four_fifths {
+			float: none;
+			@include inline-block;
+			.text { text-align: left; }
+		}
+	}
+	&.left {
+		.fifth, .quarter, .third, .two_fifths, .half, .three_fifths, .two_thirds, .three_quarters, .four_fifths { float: left; }
+	}
+	&.right {
+		.fifth, .quarter, .third, .two_fifths, .half, .three_fifths, .two_thirds, .three_quarters, .four_fifths { float: right; }
+	}
+	.fifth, .quarter, .third, .two_fifths, .half, .three_fifths, .two_thirds, .three_quarters, .four_fifths {
+		&.left { float: left; }
+		&.right { float: right; }
+	}
+	.fifth { width: 20%; }
+	.quarter { width: 25%; }
+	.third { width: 33%; }
+	.two_fifths { width: 40%; }
+	.half { width: 50%; }
+	.three_fifths { width: 60%; }
+	.two_thirds { width: 67%;}
+	.three_quarters { width: 75%; }
+	.four_fifths { width: 80%; }
+}
