@@ -28,6 +28,10 @@
 @mixin box-sizing( $box-model ) { -webkit-box-sizing: $box-model; -moz-box-sizing: $box-model; box-sizing: $box-model; }
 @mixin hide { opacity: 0; visibility: hidden; height: 0; width: 0; padding: 0; margin: 0; }
 @mixin show { opacity: 1; visibility: visible; height: auto; width: auto; }
+@mixin opacity($level) { filter: alpha(opacity = $level * 100); opacity: $level; }
+@mixin transform($type) { -webkit-transform: $type; -moz-transform: $type; -ms-transform: $type; -o-transform: $type; transform: $type; }
+@mixin animation($name, $timing: 0.5s) { -webkit-animation: $name $timing; -moz-animation: $name $timing; -ms-animation: $name $timing; -o-animation: $name $timing; }
+@mixin vertical-align { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 /* ===========================================================
 	GRADIENT MIXINS
 =========================================================== */
