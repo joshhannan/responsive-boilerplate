@@ -169,6 +169,9 @@
             };";
             echo "map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
             directionsDisplay.setMap(map);";
+            if( $marker_url != '' ) :
+               echo "var image = '" . $marker_url . "';";
+            endif;
             echo "var myLatLng = new google.maps.LatLng(" . $location . ");
             var jewelMarker = new google.maps.Marker({
                position: myLatLng,
@@ -178,9 +181,6 @@
                endif;
             echo "});";
             echo "directionsDisplay.setPanel(document.getElementById('g-directions'));";
-            if( $marker_url != '' ) :
-               echo "<br />var image = '" . $marker_url;
-            endif;
          endif;
          echo "};";
 
