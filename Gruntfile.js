@@ -12,7 +12,8 @@ module.exports = function(grunt) {
 					compass: true
 				},
 				files: {
-					'css/global.css': 'css/sass/global.scss'
+					'css/global.css': 'css/sass/global.scss',
+					'css/inline.css': 'css/sass/inline.scss'
 				}
 			}
 		},
