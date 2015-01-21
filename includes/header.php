@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
 		<meta name="author" content="http://www.aycmedia.com" />
 		<link rel="icon" href="favicon.ico" />
-		<script src="js/libs/modernizr-2.6.2.min.js"></script>
+		<script async src="js/libs/modernizr-2.6.2.min.js"></script>
 		<?php $css_file = file_get_contents('./css/inline.css'); ?>
 		<style><?php echo $css_file; ?></style>
 		<script>

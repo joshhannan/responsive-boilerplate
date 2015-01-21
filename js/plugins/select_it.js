@@ -13,7 +13,11 @@
 			count++;
 			$(this).hide();
 			var choices = $(this).html();
-			if( $(this).data('placeholder') ) { placeholder = $(this).data('placeholder'); } else { placeholder = settings.placeholder; }
+			if( $(this).data('placeholder') ) {
+				if( $(this).find('option:selected') ) { placeholder = $(this).find('option:selected').text(); } else { placeholder = $(this).data('placeholder'); }
+			} else {
+				if( $(this).find('option:selected') ) { placeholder = $(this).find('option:selected').text(); } else { placeholder = settings.placeholder; }
+			}
 			if( $(this).data('onchange') ) { onchange = $(this).data('onchange'); } else { onchange = settings.onchange; }
 			$(this).children('option').each(function(index) {
 				var choice_value = $(this).val();
@@ -23,6 +27,7 @@
 			choices_array = choices_array.join('\r');
 			$(this).after('<div id="select_'+count+'" class="select_it"><div class="select_it_box"><span class="displayed">'+placeholder+'</span><span class="tab"></span></div><ul style="display: none;">'+choices_array+'</ul></div><!--/select_it-->');
 			$('.select_it .select_it_box').click(function(e) {
+				e.stopImmediatePropagation();
 				current = $(this).parents('.select_it').attr('id');
 				if( $('#'+current+' .select_it_box').hasClass('open') ) {
 					$('.select_it_box').removeClass('open');
@@ -33,9 +38,9 @@
 					$('#'+current+' .select_it_box').addClass('open');
 					$('#'+current+' ul').show();
 				}
-				e.stopPropagation();
 			});
 			$('.select_it ul li').click(function(e) {
+				e.stopImmediatePropagation();
 				current = $(this).parents('.select_it').attr('id');
 				$('#'+current+' ul li').removeClass('selected');
 				$('#'+current+' ul').hide();
@@ -60,7 +65,6 @@
 				if( onchange == 'submit' ) {
 					$(this).parents('form').submit();
 				}
-				e.stopPropagation();
 			});
 		});
 		$(document).click(function() {

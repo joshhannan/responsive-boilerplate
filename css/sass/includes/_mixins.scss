@@ -6,22 +6,80 @@
 	1.  Horizontal Nav
 	2.  Vertical Nav
 */
+
+@mixin image_ratio($ratio) {
+	@media (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { @content; }
+}
+
 @mixin bp($point) {
 	$bp-480: "(min-width: 480px)";
+	$bp-max-480: "(max-width: 480px)";
 	$bp-640: "(min-width: 640px)";
-	$bp-max-768: "(max-width: 769px)";
+	$bp-max-640: "(max-width: 640px)";
 	$bp-768: "(min-width: 769px)";
+	$bp-max-768: "(max-width: 769px)";
 	$bp-1000: "(min-width: 1000px)";
+	$bp-max-1000: "(max-width: 1000px)";
+	$bp-1200: "(min-width: 1200px)";
+	$bp-max-1200: "(max-width: 1200px)";
 	$bp-1400: "(min-width: 1400px)";
+	$bp-max-1400: "(max-width: 1400px)";
 	$bp-768-1000: "(min-width: 769px) and (max-width: 1000px)";
 	@if $point == 480 { @media #{$bp-480} { @content; } }
+	@else if $point == max-480 { @media #{$bp-max-480} { @content; } }
 	@else if $point == 640 { @media #{$bp-640} { @content; } }
-	@else if $point == max-768 { @media #{$bp-max-768} { @content; } }
+	@else if $point == max-640 { @media #{$bp-max-640} { @content; } }
 	@else if $point == 768 { @media #{$bp-768} { @content; } }
+	@else if $point == max-768 { @media #{$bp-max-768} { @content; } }
 	@else if $point == 1000 { @media #{$bp-1000}  { @content; } }
+	@else if $point == max-1000 { @media #{$bp-max-1000}  { @content; } }
+	@else if $point == 1200 { @media #{$bp-1200}  { @content; } }
+	@else if $point == max-1200 { @media #{$bp-max-1200}  { @content; } }
 	@else if $point == 1400 { @media #{$bp-1400}  { @content; } }
+	@else if $point == max-1400 { @media #{$bp-max-1400}  { @content; } }
 	@else if $point == 768-1000 { @media #{$bp-768-1000} { @content; } }
 }
+@mixin font( $font_size, $line_height, $base, $bold: $base, $italic: $base, $bolditalic: $base, $fallback: $text ) {
+	font: normal #{$font_size}/#{$line_height} $base, $fallback;
+	strong { font: normal #{$font_size}/#{$line_height} $bold, $fallback; }
+	em { font: normal #{$font_size}/#{$line_height} $italic, $fallback; }
+	strong em, em strong { font: normal #{$font_size}/#{$line_height} $bolditalic, $fallback; }
+}
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+}
+@mixin flex_display {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-around;
+}
+@mixin horizontal_navigation {
+	ul {
+		width: 100%;
+		float: left;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		justify-content: space-around;
+		text-align: center;
+		li {
+			margin: auto;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+		}
+	}
+}
+@mixin hidden { height: 0; width: 0; opacity: 0; visibility: hidden; * { height: 0; width: 0; opacity: 0; visibility: hidden; } }
+@mixin visible { height: auto; width: auto; opacity: 1; visibility: visible; * { height: auto; width: auto; opacity: 1; visibility: visible; } }
 @mixin resp_image { display: block; width: 100%; height: auto; margin: 0 auto; }
 @mixin inline_block { display: inline-block; zoom: 1; *display: inline; }
 @mixin vendorize( $property, $value ) { -webkit-#{$property}: $value; -moz-#{$property}: $value; -ms-#{$property}: $value; -o-#{$property}: $value; #{$property}: $value; }

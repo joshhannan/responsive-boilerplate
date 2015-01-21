@@ -3,6 +3,7 @@
 ===========================================================================================*/
 * { @include box-sizing($box-model: border-box); -webkit-font-smoothing: antialiased; }
 body { font-size: 12px; line-height: 1em; font-family: $text; }
+.chromeframe { text-align: center; padding: 10px 0; }
 .container { max-width: 1200px; margin: 0 auto; width: 100%; }
 h1 { font: 2em/2em $heading; }
 h2 { font: 1.8em/1.8em $heading; }
@@ -10,8 +11,30 @@ h3 { font: 1.6em/1.6em $heading; }
 h4 { font: 1.4em/1.4em $heading; }
 h5 { font: 1.2em/1.2em $heading; }
 h6 { font: 1em/1em $heading; font-weight: bold; }
+hr {
+	position: relative;
+	max-width: 210px;
+	border: none;
+	color: #c5bec7;
+	height: 1px;
+	background: #c5bec7;
+	width: 30%;
+	margin: 40px 35% 20px;
+	&:after {
+		content: '';
+		height: 20px;
+		position: absolute;
+		top: -9px;
+		background-color: #e0e0e0;
+		width: 40px;
+		left: 50%;
+		margin: 0 0 0 -20px;
+		background: #e0e0e0;
+	}
+}
 p { font: 1em/1.25em $text; }
 ul li { font: 1em/1.5em $text; }
+ul li ul  { margin: 0 0 0 25px; }
 a { color: $link; &:hover, &:active { color: $body_text; } }
 .left { float: left; }
 .right { float: right; }
@@ -33,18 +56,37 @@ a { color: $link; &:hover, &:active { color: $body_text; } }
 	width: 36%; float: left; position: relative;
 	.select_it_box {
 		width: 100%; float: left;
-		.displayed { cursor: pointer; text-align: left; display: block; border-radius: 0; background: #a8a8a8; padding: 10px 7%; width: 100%; color: $white; font: 14px/14px $text; text-transform: uppercase; }
+		.displayed { cursor: pointer; text-align: left; display: block; background: $white; padding: 14px 15px; border-radius: 8px; width: 100%; color: $black; font: 18px/18px $text; text-transform: uppercase; }
+		&.open .displayed { border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
 		&.open .tab:after { content: "\f106";  }
 	}
 	.tab {
-		position: absolute; width: 24px; top: 10px; right: 5px; bottom: 10px; color: $white;
+		position: absolute; width: 24px; top: 16px; right: 5px; bottom: 10px; color: $black;
 		&:after { content: "\f107"; font: 32px/16px 'FontAwesome'; }
 	}
-	ul { background: #a8a8a8; width: 100%; position: absolute; top: 99%; z-index: 9999; float: left; padding: 10px 0; max-height: 150px; border-left: 1px solid $gray; border-right: 1px solid $gray; border-bottom: 1px solid $gray; box-sizing: border-box; overflow-y: scroll; }
+	ul { background: $white; width: 100%; position: absolute; top: 99%; z-index: 9999; float: left; padding: 10px 0; max-height: 150px; border-left: 1px solid $gray; border-right: 1px solid $gray; border-bottom: 1px solid $gray; box-sizing: border-box; overflow-y: scroll; }
 	li {
 		cursor: pointer; width: 100%; box-sizing: border-box; padding: 5px 7%; float: left; list-style: none outside; display: block; font: 12px/12px $text; color: $white;
-		&:hover, &.selected { color: #FFFFFF; background: $light_black; }
+		&:hover, &.selected { color: $white; background: $light_black; }
 	}
+}
+.check_it {
+	background: $black; width: 20px; height: 20px; position: relative; float: left; margin: 0 10px 0 0;
+	&.checked {
+		.checked { display: block; }
+		.unchecked { display: none; }
+	}
+	.checked { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; text-align: center; &:after { content: '\f00c'; height: 100%; color: $white; width: 100%; font-size: 16px; line-height: 20px; text-align: center; } }
+	.unchecked { position: absolute; display: block; }
+}
+.radio_it {
+	background: $black; position: relative; float: left; margin: 0 10px 0 0; border-radius: 20px; padding: 10px; text-align: center;
+	&.checked {
+		.checked { display: block; }
+		.unchecked { display: none; }
+	}
+	.checked { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; text-align: center; &:after { content: '\f111'; color: $white; height: 100%; width: 100%; font-size: 12px; line-height: 21px; text-align: center; margin: 0 0 0 1px; } }
+	.unchecked { position: absolute; display: block; }
 }
 /*===========================================================================================
 	MEDIA CLASSES
