@@ -6,12 +6,12 @@ body { font-size: 16px; line-height: 1em; font-family: $text; color: $body_text;
 .chromeframe { text-align: center; padding: 10px 0; }
 .container { max-width: 1200px; margin: 0 auto; width: 100%; }
 .content {
-	h1 { @include font( 2em, 1.2em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em; }
-	h2 { @include font( 1.8em, 1em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em; }
-	h3 { @include font( 1.6em, 1em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em; }
-	h4 { @include font( 1.4em, 1em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em;}
-	h5 { @include font( 1.2em, 1em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em; }
-	h6 { @include font( 1em, 1em, $m_700, $m_900, $m_700_italic, $m_900_italic ); margin: 0 0 1em; }
+	h1 { @include font( 2em, 1.2em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
+	h2 { @include font( 1.8em, 1em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
+	h3 { @include font( 1.6em, 1em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
+	h4 { @include font( 1.4em, 1em, $os, $osb, $osi, $osib ); margin: 0 0 1em;}
+	h5 { @include font( 1.2em, 1em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
+	h6 { @include font( 1em, 1em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
 	hr { height: 1px; border: none; background: #c2c2c2; max-width: 300px; margin: 0 auto; box-shadow: 0px 0px 1px #ededed; }
 	hr.space { margin: 20px 0 30px; }
 	hr.center_space { margin: 20px auto 30px; }
@@ -38,11 +38,11 @@ body { font-size: 16px; line-height: 1em; font-family: $text; color: $body_text;
 		}
 	}
 */
-	p { @include font( 1em, 1.25em, $m_500, $m_700, $m_500_italic, $m_700_italic ); margin: 0 0 1em; }
+	p { @include font( 1em, 1.25em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
 	ul { list-style: disc outside none; margin: 0 0 0 15px; }
-	ul li { @include font( 1em, 1.25em, $m_500, $m_700, $m_500_italic, $m_700_italic ); margin: 0 0 1em; }
+	ul li { @include font( 1em, 1.25em, $os, $osb, $osi, $osib ); margin: 0 0 1em; }
 	ul li ul  { margin: 0 0 0 25px; }
-	a { color: $brand; &:hover, &:active { color: $body_text; } }
+	a { color: $black; &:hover, &:active { color: $body_text; } }
 	.button, a.button { color: $white; margin: 0 0 1em; }
 	.button, a.button { &.right { @include bp(max-640) { float: none; display: block; margin: 0 auto; } } }
 	&.left { padding: 1em 2%; @include bp(640) { padding: 1% 5% 1% 0; } }
@@ -64,7 +64,7 @@ body { font-size: 16px; line-height: 1em; font-family: $text; color: $body_text;
 	font: 18px/18px 'museo_sans700', sans-serif;
 	padding: 15px 20px;
 	box-sizing: border-box;
-	background: $turquoise;
+	background: $black;
 	text-transform: uppercase;
 	border: none;
 	@include inline_block;
@@ -137,9 +137,9 @@ body { font-size: 16px; line-height: 1em; font-family: $text; color: $body_text;
 	float: left;
 	.container { max-width: 650px !important; }
 	label {
-		background: $turquoise;
+		background: $black;
 		color: $white;
-		font: 12px/12px $m_700;
+		font: 12px/12px $os;
 		right: 0;
 		bottom: 0;
 		padding: 5px 20px;

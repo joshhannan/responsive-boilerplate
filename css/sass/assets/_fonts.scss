@@ -7,6 +7,7 @@ $fa: 'FontAwesome';
 $os: 'open_sansregular';
 $osb: 'open_sansbold';
 $osi: 'open_sansitalic';
+$osib:  'open_sansbold_italic';
 $osl: 'open_sanslight';
 $osli: 'open_sanslight_italic';
 $oss: 'open_sanssemibold';
@@ -44,6 +45,16 @@ OPEN SANS
 		url('../fonts/OpenSans-Italic-webfont.woff') format('woff'),
 		url('../fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
 		url('../fonts/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open_sansbold_italic';
+	src: url('../fonts/OpenSans-BoldItalic-webfont.eot');
+	src: url('../fonts/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/OpenSans-BoldItalic-webfont.woff') format('woff'),
+		url('../fonts/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+		url('../fonts/OpenSans-BoldItalic-webfont.svg#open_sansitalic') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

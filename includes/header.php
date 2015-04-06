@@ -16,7 +16,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
 		<meta name="author" content="http://www.aycmedia.com" />
 		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/global.css">
 		<script async src="js/libs/modernizr-2.6.2.min.js"></script>
+<?php
+	/*
 		<?php $css_file = file_get_contents('./css/inline.css'); ?>
 		<style><?php echo $css_file; ?></style>
 		<script>
@@ -24,13 +27,13 @@
 			loadCSS: load a CSS file asynchronously.
 			[c]2014 @scottjehl, Filament Group, Inc.
 			Licensed MIT
-			*/
 			function loadCSS(a,b,c){"use strict";function g(){for(var b,e=0;e<f.length;e++)f[e].href&&f[e].href.indexOf(a)>-1&&(b=!0);b?d.media=c||"all":setTimeout(g)}var d=window.document.createElement("link"),e=b||window.document.getElementsByTagName("script")[0],f=window.document.styleSheets;return d.rel="stylesheet",d.href=a,d.media="only x",e.parentNode.insertBefore(d,e),g(),d}
 			var href = "css/global.css";
 			loadCSS( href );
 		</script>
 		<noscript><link href="css/global.css" rel="stylesheet"></noscript>
-		<?php /*<link async rel="stylesheet" href="css/global.css">*/ ?>
+	*/
+?>
 	</head>
 
 	<body class="<?php print implode(" ", $body_class); ?>">
@@ -39,7 +42,13 @@
 		<![endif]-->
 		<header class="left block">
 			<div class="container">
-				<h1>Responsive Theme Boilerplate</h1>
+				<a class="logo"><img src="/images/logo.png" /></a><!--/logo-->
+				<nav>
+					<a href="#">About Us</a>
+					<a href="#">Past Work</a>
+					<a href="#">Approach</a>
+					<a href="#">Contact</a>
+				</nav>
 			</div><!--/container-->
 		</header>
 <?php

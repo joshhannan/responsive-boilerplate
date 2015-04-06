@@ -3,20 +3,16 @@
 ?>
 		<footer class="left block">
 			<div class="container">
-				<div class="two_thirds">
-					<div class="image"><img src="http://placehold.it/630x630" /></div><!--/image-->
-					<div class="text">
-						<h3>Text Placeholder</h3>
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-					</div><!--/text-->
-				</div><!--/two-thirds-->
-				<div class="third">
-					<div class="image"><img src="http://placehold.it/270x270" /></div><!--/image-->
-					<div class="text">
-						<h3>Text Placeholder</h3>
-						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-					</div><!--/text-->
-				</div><!--/third-->
+				<div class="left fifth"><?php // placeholder.  nothing here. ?></div><!--/fifth-->
+				<div class="left content three_fifths">
+					<p>1 Keystone Avenue, Suite 600 Cherry Hill, NJ 08003&nbsp;&nbsp;<a class="tel_number" href="tel:856.751.8335"><span>t</span>856.751.8335</a>&nbsp;<span class="tel_number" href="tel:856.751.8338"><span>f</span>856.751.8338</span></p>
+				</div><!--/two_thirds-->
+				<div class="left fifth social">
+					<a class="linkedin icon" href="#"></a>
+					<a class="pinterest icon" href="#"></a>
+					<a class="twitter icon" href="#"></a>
+					<a class="facebook icon" href="#"></a>
+				</div><!--/social-->
 			</div><!--/container-->
 		</footer>
 		<!-- Load Scripts -->
